@@ -5,5 +5,4 @@
 # 実行
 
 実行するときはターミナルを開いて
-> cd svelte-app
 > npm run dev
