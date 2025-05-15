@@ -1,26 +1,20 @@
 <script>
 	import { onMount } from 'svelte';
 	
-	let gameTitle = "エコシティ";
-	let gameDescription = "持続可能な街づくりを目指すシミュレーションゲーム";
-	let features = [
-		"環境に配慮した街づくり",
-		"再生可能エネルギーの活用",
-		"住民の幸福度管理",
-		"持続可能な資源管理"
-	];
+	export let gameConfig;
 </script>
 
 <main>
 	<header>
-		<h1>{gameTitle}</h1>
-		<p class="subtitle">{gameDescription}</p>
+		<h1>{gameConfig.title}</h1>
+		<p class="subtitle">{gameConfig.description}</p>
+		<!-- <p class="version">Version {gameConfig.version} - {gameConfig.releaseDate}</p> -->
 	</header>
 
 	<section class="features">
 		<h2>ゲームの特徴</h2>
 		<div class="feature-grid">
-			{#each features as feature}
+			{#each gameConfig.features as feature}
 				<div class="feature-card">
 					<p>{feature}</p>
 				</div>
@@ -116,4 +110,10 @@
 			font-size: 1.2em;
 		}
 	}
+
+	/* .version {
+		color: #666;
+		font-size: 0.9em;
+		margin-top: 1em;
+	} */
 </style>
